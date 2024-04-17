@@ -164,14 +164,12 @@ checkoutBtn.addEventListener("click", function () {
   // Enviar o pedido para api WhatsApp
   const cartItems = cart
     .map((item) => {
-      return ` ${item.name} 
-        Quantidade: (${item.quantity}) 
-        Preço: R$${item.price}) |`;
+      return ` ${item.name}, Quantidade: (${item.quantity}), Preço: R$${item.price}) |`;
     })
     .join("");
 
   const message = encodeURIComponent(cartItems);
-  const phone = "5511949911676";
+  const phone = "5511996640600";
 
   window.open(
     `https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`,
@@ -187,7 +185,7 @@ checkoutBtn.addEventListener("click", function () {
 function checkRestaurantOpen() {
   const data = new Date();
   const hora = data.getHours();
-  return hora >= 10 && hora < 20;
+  return hora >= 10 && hora < 19;
 }
 
 const spanItem = document.getElementById("date-span");
